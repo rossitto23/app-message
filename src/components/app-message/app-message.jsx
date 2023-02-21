@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListCategory from "../list-category/list-category";
+import ListMessageCategory from "../list-message-category/list-message-category";
 
 
 const AppMessage = () => {
@@ -14,6 +15,7 @@ const AppMessage = () => {
         <>
         {/* <Login /> */}
         <ListCategory onCat = {categorySelected}/>
+        {/* {choixCategorie && <ListMessageCategory id={choixCategorie}/>} */}
         {/* <ListMessageCategory /> */}
         </>
     )

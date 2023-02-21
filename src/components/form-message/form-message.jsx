@@ -10,7 +10,7 @@ const FormMessage = ({onAddMessage}) => {
 
     const handleAddMessage = (data) => {
         onAddMessage(data.content);
-        reset();
+        // reset();
     }
 
     return (

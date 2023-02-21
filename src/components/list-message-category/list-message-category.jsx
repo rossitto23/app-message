@@ -1,8 +1,15 @@
+import { useState } from "react";
 import FormMessage from "../form-message/form-message";
 import ListMessage from "../list-message/list-message";
 
 
 const ListMessageCategory = ({data}) => {
+
+    const [message, setMessage] = useState();
+
+    const handleNewMessage = (content) => {
+        setMessage(content);
+    }
 
     return(
         <div>
@@ -16,7 +23,7 @@ const ListMessageCategory = ({data}) => {
                 <ListMessage data={data} />
             </div>
             <div>
-                <FormMessage />
+                <FormMessage onAddMessage={handleNewMessage}/>
             </div>
         </div>
     )
