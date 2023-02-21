@@ -17,7 +17,7 @@ const Login = () => {
     return (
         <form onSubmit={submitLog}>
             <input className={styles.champ} value={login} onChange={logChange}></input>
-            <button className={styles.champ}></button>
+            <button className={styles.champ} ></button>
         </form>
     )
 }
