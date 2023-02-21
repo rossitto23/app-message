@@ -21,9 +21,9 @@ const AppMessage = () => {
             <h1 className={styles.titre} >Message App</h1>
             </div>
         {/* <Login /> */}
-        <ListCategory onCat = {categorySelected}/>
+        {/* <ListCategory onCat = {categorySelected}/> */}
         {/* {choixCategorie && <ListMessageCategory id={choixCategorie}/>} */}
-        {/* <ListMessageCategory /> */}
+        <ListMessageCategory categoryId= {1} />
         </div>
     )
 }

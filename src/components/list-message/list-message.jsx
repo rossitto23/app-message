@@ -1,9 +1,12 @@
+import style from './list-message.module.css'
+
 const ListMessage = ({ data }) => {
+    const time = new Date(data.createAt).toLocaleTimeString();
   return (
-    <div>
-      <p>{data.content}</p>
-      <p>{data.name}</p>
-      <p>{data.date}</p>
+    <div className={style.main}>
+      <p>Contenu: {data.content}</p>
+      <p>Auteur: {data.author}</p>
+      <p>Crée à: {time}</p>
     </div>
   );
 };
