@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ListCategory from "../list-category/list-category";
+// import Login from "../login/login";
 
-import ListMessageCategory from "../list-message-category/list-message-category";
 
 import styles from "./app-message.module.css"
 
@@ -17,13 +17,15 @@ const AppMessage = () => {
 
     return(
         <div className={styles.border}>
-            <div className={styles.ctn} >
-            <h1 className={styles.titre} >Message App</h1>
+            <div className={styles.main} >
+                <div className={styles.ctn} >
+                <h1 className={styles.titre} >Message App</h1>
+                </div>
+                    {/* <Login /> */}
+                    <ListCategory onCat = {categorySelected}/>
+                    {/* {choixCategorie && <ListMessageCategory id={choixCategorie}/>} */}
+                    {/* <ListMessageCategory /> */}
             </div>
-        {/* <Login /> */}
-        <ListCategory onCat = {categorySelected}/>
-        {/* {choixCategorie && <ListMessageCategory id={choixCategorie}/>} */}
-        {/* <ListMessageCategory /> */}
         </div>
     )
 }
