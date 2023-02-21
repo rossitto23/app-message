@@ -1,14 +1,15 @@
 import styles from './categorie.module.css'
 
-const Categorie = (props) => {
+
+const Categorie = (data) => {
     // ci dessous transformer l'heure
-    const heureMess = `${new Date(props.data.lastMess).getHours()}h${new Date(props.data.lastMess).getMinutes()}`
+    const heureMess = `${new Date(data.data.lastUpdate).getHours()}h${new Date(data.data.lastUpdate).getMinutes()}`
 
     return (
-        <li onClick={()=>{props.choixCat(props.data.id)}} className={styles.liste}>
+        <li onClick={()=>{data.data.choixCat(data.data.id)}} className={styles.liste}>
             <div className={styles.title} >
-                <p className={styles.nom} >{props.data.nom}</p> 
-                <p className={styles.message}>{props.data.nbreMess} message(s) </p> 
+                <p className={styles.nom} >{data.data.name}</p> 
+                <p className={styles.message}>{data.data.count} message(s) </p> 
             </div>
             <div className={styles.ctnHeure} >
                 <p className={styles.heure}>Dernier message : {heureMess} </p>
