@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppMessage from "./components/app-message/app-message";
 
 function App() {
   return (
     <div className="App">
       {/* <Header /> */}
-      {/* <AppMessage /> */}
-      
+      <AppMessage />
     </div>
   );
 }

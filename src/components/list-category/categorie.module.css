@@ -1,0 +1,29 @@
+.liste {
+    border: solid 2px black;
+    margin-bottom: 2rem;
+}
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.nom {
+    text-align: left;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    
+}
+
+.message {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+
+.heure {
+ 
+    
+    font-size: 1.3rem;
+
+}
