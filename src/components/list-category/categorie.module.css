@@ -22,8 +22,11 @@
 }
 
 .heure {
- 
-    
     font-size: 1.3rem;
+    margin-left: 1rem;
+}
 
+.ctnHeure {
+    display: flex;
+    justify-content: flex-start;
 }
