@@ -1,3 +1,5 @@
+import ListCategory from "../list-category/list-category";
+
 
 const AppMessage = () => {
 
@@ -6,7 +8,6 @@ const AppMessage = () => {
         {/* <Login /> */}
         {/* <ListCategory /> */}
         {/* <ListMessageCategory /> */}
-        {/* test PUSH */}
         </>
     )
 }
