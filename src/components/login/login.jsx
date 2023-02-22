@@ -1,25 +1,30 @@
-import { useState } from "react"
-import styles from './login.module.css'
+import { useState } from "react";
+import styles from "./login.module.css";
+import { useForm } from "react-hook-form";
+import { Button } from "@mui/material";
 
-const Login = () => {
- const [login,SetLogin] = useState('')
+const Login = ({ onLogin }) => {
+  const { register, handleSubmit } = useForm();
 
- const logChange = (e) => {
-    SetLogin(e.target.value)
- }
+  const handleLogin = (data) => {
+    onLogin(data.login);
+  };
 
- const submitLog = (e) => {
-    e.preventDefault()
-    SetLogin()
-    console.log(login);
- }
+  return (
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit(handleLogin)}>
+        <input
+          className={styles.champ}
+          type="text"
+          id="login"
+          {...register("login", { required: true })}
+        />
+        <Button type="submit" variant="outlined">
+          Login
+        </Button>
+      </form>
+    </div>
+  );
+};
 
-    return (
-        <form onSubmit={submitLog}>
-            <input className={styles.champ} value={login} onChange={logChange}></input>
-            <button className={styles.champ} ></button>
-        </form>
-    )
-}
-
-export default Login
+export default Login;

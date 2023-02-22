@@ -15,6 +15,8 @@ const ListMessageCategory = ({categoryId}) => {
         setMessage(content);
     }
 
+  
+
     // http://localhost:8080/api/subject/{categoryId}/message
     useEffect(() => {
         
