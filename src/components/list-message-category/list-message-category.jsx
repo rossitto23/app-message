@@ -4,7 +4,7 @@ import FormMessage from "../form-message/form-message";
 import ListMessage from "../list-message/list-message";
 
 
-const ListMessageCategory = ({categoryId}) => {
+const ListMessageCategory = ({categoryId, onReturn}) => {
 
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
@@ -43,12 +43,11 @@ const ListMessageCategory = ({categoryId}) => {
 
 
 
-
     return(
         <div>
             <div>
                 <h3>Catégorie</h3>
-                <button>Retour</button>
+                <button onClick={onReturn}>Retour</button>
             </div>
 
             <div>

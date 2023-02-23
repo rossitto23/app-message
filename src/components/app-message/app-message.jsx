@@ -17,6 +17,10 @@ const AppMessage = () => {
     setLogged(data); 
   };
 
+  const returnBtn = () => {
+        setChoixCategorie(null)
+  }
+
 
 
   return (
@@ -30,7 +34,7 @@ const AppMessage = () => {
         {(logged && !choixCategorie && !listMessage) && <ListCategory onCat={categorySelected} />}
         {/* {choixCategorie && <ListMessageCategory id={choixCategorie}/>} */}
         {/* <ListMessageCategory /> */}
-        {choixCategorie && <ListMessageCategory categoryId={choixCategorie} />}
+        {choixCategorie && <ListMessageCategory categoryId={choixCategorie} onReturn={returnBtn} />}
       </div>
     </div>
   );
