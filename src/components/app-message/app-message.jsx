@@ -34,7 +34,7 @@ const AppMessage = () => {
         {(logged && !choixCategorie && !listMessage) && <ListCategory onCat={categorySelected} />}
         {/* {choixCategorie && <ListMessageCategory id={choixCategorie}/>} */}
         {/* <ListMessageCategory /> */}
-        {choixCategorie && <ListMessageCategory categoryId={choixCategorie} onReturn={returnBtn} />}
+        {choixCategorie && <ListMessageCategory categoryId={choixCategorie} onReturn={returnBtn} author={logged} />}
       </div>
     </div>
   );

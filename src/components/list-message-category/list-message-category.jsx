@@ -4,15 +4,25 @@ import FormMessage from "../form-message/form-message";
 import ListMessage from "../list-message/list-message";
 
 
-const ListMessageCategory = ({categoryId, onReturn}) => {
+const ListMessageCategory = ({categoryId, onReturn, author}) => {
 
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
-    const [message, setMessage] = useState();
+    const [posted, setPosted] = useState(false);
 
 
     const handleNewMessage = (content) => {
-        setMessage(content);
+        setPosted(true);
+        axios.post(`http://localhost:8080/api/subject/${categoryId}/message`, {
+          categoryId: categoryId, 
+          author: author,
+          content,
+          createAt: new Date()
+        }).then(response => {
+            console.log(response)
+        }).catch(response => {
+            console.log(response.message);
+        })
     }
 
   
@@ -20,7 +30,7 @@ const ListMessageCategory = ({categoryId, onReturn}) => {
     // http://localhost:8080/api/subject/{categoryId}/message
     useEffect(() => {
         
-        axios.get('http://localhost:8080/api/subject/'+ categoryId +'/message'
+        axios.get(`http://localhost:8080/api/subject/${categoryId}/message`
         ).then(response => {
             const res = response.data
             setData(res);
@@ -38,8 +48,9 @@ const ListMessageCategory = ({categoryId, onReturn}) => {
         return () => {
             setData(null);
             setError(null);
+            setPosted(false);
         }
-    }, [categoryId]);
+    }, [categoryId, posted]);
 
 
 
@@ -49,7 +60,7 @@ const ListMessageCategory = ({categoryId, onReturn}) => {
                 <h3>Catégorie</h3>
                 <button onClick={onReturn}>Retour</button>
             </div>
-
+            {error && <p>{error}</p>}
             <div>
                 {/* Boucler pour afficher message par message */}
                 {/* <ListMessage data={data} /> */}
